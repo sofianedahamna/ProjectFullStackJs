@@ -38,8 +38,8 @@ exports.postTask = (req, res) => {
       };
       
       exports.tasksCtrl = (req, res) => {
-        console.log('tasksCtrl id :', req.params.id);
-        const filteredTasks = tasks.filter(t => t.idUtil == req.params.id);
+        console.log('tasksCtrl id :', req.params.iduser);
+        const filteredTasks = todos.filter(t => t.user == req.params.iduser);
         res.json(filteredTasks);
       }
       exports.update = (req, res) => {
@@ -48,6 +48,40 @@ exports.postTask = (req, res) => {
         updateJSON();
         res.end();
       };
+      
+      exports.taskCat = (req, res) => {
+        console.log("ligne 53 appel task cat");
+        console.log("ligne 54 cat :", req.params.prioriCat, req.params.urgentCat);
+        
+        const filteredCat = todos.reduce((result, t) => {
+          if (t.cat === req.params.prioriCat && !result.includes(t.cat)) {
+            result.push(t.cat);
+          } else if (t.cat === req.params.urgentCat && !result.includes(t.cat)) {
+            result.push(t.cat);
+          }
+          return result;
+        }, []);
+      
+        console.log('ligne 65 tache par cat :', filteredCat);
+        res.json(filteredCat);
+      };
+      
+      exports.taskCatByValueAndUser = (req, res) => {
+        console.log("appel taskcatByValueAndUser");
+        console.log("cat :", req.params.cat);
+        console.log("user :", req.params.user);
+        
+        const filteredTasksByValueAndUser = todos.filter(t => t.cat == req.params.cat.trim() && t.user == req.params.user);
+        
+        console.log("filteredTasksByValueAndUser", filteredTasksByValueAndUser);
+        res.json(filteredTasksByValueAndUser);
+      };
+      
+      
+      
+      
+      
+      
       
       
 function updateJSON() {
