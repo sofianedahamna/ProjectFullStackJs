@@ -2,7 +2,7 @@ const { resolve } = require('path');
 const { randomUUID } = require('crypto');
 
 // DECLARATIONS
-const { todos,users } = require('../db/data.json');
+const { todos,user } = require('../db/data.json');
 const { writeFileSync } = require('fs');
 
 exports.homeCtrl = (req, res) => {
@@ -32,9 +32,9 @@ exports.postTask = (req, res) => {
 
       exports.usersCtrl = (req, res) => {
         console.log("appel users ctrl");
-        console.log("users :", users);
+        console.log("users :", user);
         //console.log('body :', req.body);
-        res.json(users);
+        res.json(user);
       };
       
       exports.tasksCtrl = (req, res) => {
@@ -42,10 +42,17 @@ exports.postTask = (req, res) => {
         const filteredTasks = tasks.filter(t => t.idUtil == req.params.id);
         res.json(filteredTasks);
       }
+      exports.update = (req, res) => {
+        const todo = todos.find(t => t.id == req.params.id);
+        todo.done = req.params.done == 'true';
+        updateJSON();
+        res.end();
+      };
+      
       
 function updateJSON() {
     writeFileSync(
       resolve('db', 'data.json'),
-      JSON.stringify({ todos }, null, 2)
+      JSON.stringify({ todos,user }, null, 2)
     );
   }

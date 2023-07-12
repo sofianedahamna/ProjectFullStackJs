@@ -43,7 +43,7 @@ let users = [];
       console.log('2e then')
       users = data;
       fillSelectUsers(users);
-      addListenerSelectUsers();
+      //addListenerSelectUsers();
   });
   }
   
@@ -58,3 +58,31 @@ let users = [];
       selectUsers.innerHTML = htmlContent;
       affiliateUser.innerHTML = htmlContent;
   }
+  
+  function addListenerSelectUsers() {
+    const selectUsers = document.getElementById("list-user");
+    selectUsers.addEventListener("change", () => {
+        console.log("change value :", selectUsers.value);
+        if(selectUsers.value !== "empty") {
+            console.log("requete tasks by user id");
+        }
+        // faire requete pour recuperer les tasks de cet user
+        getTasksByUserId(selectUsers.value);
+    });
+}
+
+function getTasksByUserId(userId) {
+    console.log("recup tasks by user id :", userId);
+    fetch(endPoint+"/user/" + userId, 
+    {method: "GET"})
+.then((res) => {
+  console.log(`1er then de getTaskByUser ligne 79`,res);
+    return res.json();
+})
+.then(data => {
+    tasks = data;
+    console.log("task by util id :", tasks);
+    // appel fonction qui affiche les tasks
+    renderTasks(tasks);
+});
+}
