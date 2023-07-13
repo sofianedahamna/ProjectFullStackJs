@@ -1,0 +1,71 @@
+{
+    "recipes": [
+        {
+        "french": [
+            {
+                "id": 1,
+                "title": "Raclette",
+                "ingredients": [
+                    {
+                        "name": "pomme de terre",
+                        "quantity": 16,
+                        "unit": "UNIT_OBJECT"
+                    },
+                    {
+                        "name": "fromage à raclette",
+                        "quantity": 300,
+                        "unit": "UNIT_GRAM"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "title": "Pizza",
+                "ingredients": [
+                    {
+                        "name": "tomate",
+                        "quantity": 1,
+                        "unit": "UNIT_KILOGRAM"
+                    },
+                    {
+                        "name": "fromage à raclette",
+                        "quantity": 300,
+                        "unit": "UNIT_GRAM"
+                    },
+                    {
+                        "name": "oignons",
+                        "quantity": 1,
+                        "unit": "UNIT_OBJECT"
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "title": "Pot au feu",
+                "ingredients": [
+                    {
+                        "name": "viande de veau",
+                        "quantity": 1,
+                        "unit": "UNIT_KILOGRAM"
+                    },
+                    {
+                        "name": "fromage à raclette",
+                        "quantity": 300,
+                        "unit": "UNIT_GRAM"
+                    },
+                    {
+                        "name": "oignons",
+                        "quantity": 1,
+                        "unit": "UNIT_OBJECT"
+                    }
+                ]
+            }
+        ],
+        "chinese": [
+            {
+
+            }
+        ]
+    }
+    ]
+}
