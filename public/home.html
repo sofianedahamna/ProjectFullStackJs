@@ -1,60 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Todo App</title>
-		<link rel="stylesheet" href="/css/style.css">
-		<script src="./js/app.js" defer></script>
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-	</head>
-	<body>
-		<div class="container">
-			<div id="userSelection" class="row">
-				<h1 class="text-center">Sélection d'utilisateur</h1>
-				<!-- Interface pour sélectionner un utilisateur -->
-				<select name="" class="form-control" id="list-user"></select>
-			</div>
-
-			<div id="taskCreation" class="row">
-				<h2 class="text-center">Création de tache
-				</h2>
-				<!-- Interface pour créer une tâche -->
-				<form action="/todos/create" method="post" id="taskCreation">
-					<label for="" class="form-label">Tache:</label>
-					<input type="text" class="form-control" name="txt" id="taskTexte" required>
-					<select name="cat" id="Categorie" class="form-control" required>
-						<option>Choisissez une catégorie</option>
-						<option value="urgent">Urgent</option>
-						<option value="priori">Prioritaire</option>
-					</select>
-					<select name="user" id="user" class="form-control"></select>
-					<button type="submit" class="btn btn-success my-2">Ajouter</button>
-				</form>
-			</div>
-			<div class="row my-2 ">
-      <label for="" class="form-label">filtre par Categorie</label>
-				<select name="" id="filterByCat" class="form-control">
-        
-        </select>
-			</div>
-			<div id="taskLists" class="row my-3 bg-white rounded-3  ">
-				<div id="todoList">
-					<h2 class="text-center">Tâches à faire</h2>
-					<div id="div-tasks-not-done" class="mx-auto "></div>
-				</div>
-
-
-			</div>
-			<div class="row my-3 bg-white rounded-3 ">
-				<div id="doneList" class="my-3 bg-white rounded-3">
-					<h2 class="text-center">Tâches terminées</h2>
-					<div id="div-tasks-done" class="mx-auto"></div>
-				</div>
-
-
-			</div>
-		</div>
-	</body>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="./js/app.js"></script>
+</head>
+<body>
+	
+</body>
 </html>
