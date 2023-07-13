@@ -1,3 +1,35 @@
-{
- 
-}
+"recipes": [
+	"french": [
+		{
+			"id": 1,
+			"title": "Raclette",
+			"ingredients": [
+				{
+					"name": "potatoe",
+					"quantity": 16,
+					"unit": "UNIT_OBJECT"
+				},
+				{
+					"name": "tomatoe",
+					"quantity": 300,
+					"unit": "UNIT_GRAM"
+				},
+				{
+					...
+				}
+			]
+		},
+		{
+			"id": 2,
+			"title": "Boeuf Bourguinon"
+			...
+		}
+	],
+	"chinese": [
+		{
+			"id": 98,
+			"title": "Bo Bun",
+			...
+		}
+	]
+]
