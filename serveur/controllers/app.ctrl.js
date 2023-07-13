@@ -5,11 +5,6 @@ const {recipes} = require('../db/data.json')
 const { todos,user } = require('../db/data.json');
 const { writeFileSync } = require('fs');
 
-exports.homeCtrl = (req, res) => {
-  console.log(`homectrl`);
-  res.sendFile( resolve('public', 'home.html') );
-};
-
       
 function updateJSON() {
     writeFileSync(
@@ -30,7 +25,9 @@ function updateJSON() {
 
 exports.filterIngredients = (req, res) => {
   const { ingredient } = req.query;
+  console.log("req.query", req.query);
   const filtered = recipes.filter(recipe => recipe.ingredients.includes(ingredient));
+  console.log("filtered :", filtered);
   res.json(filtered);
 };
 
